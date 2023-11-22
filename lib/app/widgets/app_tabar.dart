@@ -40,7 +40,7 @@ class AppTabBar extends StatelessWidget {
                 Tab(
                   icon: Container(
                     alignment: Alignment.center,
-                    width: 150,
+                    width: 130,
                     child: Text(
                       tabs[i],
                       overflow: TextOverflow.visible,

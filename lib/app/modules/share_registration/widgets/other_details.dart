@@ -5,16 +5,17 @@ import '../../../core/constants/constants.dart';
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_dimens.dart';
 import '../../../widgets/app_button.dart';
-import '../../../widgets/date_time_picker_widget.dart';
 import '../../../widgets/drop_down_widget.dart';
+import '../../../widgets/text_form_dropdown.dart';
 import '../../../widgets/text_form_widget.dart';
 import '../controllers/share_registration_controller.dart';
 
-class FamilyDetails extends StatelessWidget {
-  const FamilyDetails({
+class OtherDetails extends StatelessWidget {
+  const OtherDetails({
     super.key,
     required this.controller,
   });
+
   final ShareRegistrationController controller;
 
   @override
@@ -29,38 +30,15 @@ class FamilyDetails extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                Constants.fHName,
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
-                ),
-              ),
-              SingleChildScrollView(
-                child: SizedBox(
-                  width: Get.width / 1.7,
-                  height: 30,
-                  child: TextFormWidget(
-                    label: Constants.fHName,
-                    onChanged: (v) {},
+              SizedBox(
+                width: Get.width / 2.8,
+                child: const Text(
+                  Constants.eduQualification,
+                  overflow: TextOverflow.visible,
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
                   ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                Constants.rel,
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
-                ),
-              ),
-              const SizedBox(
-                width: 75,
               ),
               SingleChildScrollView(
                 child: SizedBox(
@@ -69,7 +47,7 @@ class FamilyDetails extends StatelessWidget {
                   child: DropdownFormField(
                     // label: Constants.name,
                     onSaved: (val) {},
-                    items: Constants.relationList
+                    items: Constants.eduList
                         .map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         // onTap: fn1,
@@ -85,8 +63,8 @@ class FamilyDetails extends StatelessWidget {
                             )),
                       );
                     }).toList(),
-                    initialValue: controller.inputRel,
-                    hintDrop: Constants.rel,
+                    initialValue: controller.inputGender,
+                    hintDrop: Constants.eduQualification,
                   ),
                 ),
               ),
@@ -99,20 +77,20 @@ class FamilyDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                Constants.motherName,
+                Constants.nationality,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
                 ),
               ),
-              const SizedBox(
-                width: 40,
-              ),
+              // const SizedBox(
+              //   width: 95,
+              // ),
               SingleChildScrollView(
                 child: SizedBox(
                   width: Get.width / 1.7,
                   height: 30,
                   child: TextFormWidget(
-                    label: Constants.motherName,
+                    label: Constants.nationality,
                     onChanged: (v) {},
                   ),
                 ),
@@ -126,116 +104,20 @@ class FamilyDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                Constants.nomName,
+                Constants.bankAC,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
                 ),
               ),
-              const SizedBox(
-                width: 50,
-              ),
+              // const SizedBox(
+              //   width: 20,
+              // ),
               SingleChildScrollView(
                 child: SizedBox(
                   width: Get.width / 1.7,
                   height: 30,
                   child: TextFormWidget(
-                    label: Constants.nomName,
-                    onChanged: (v) {},
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                Constants.nomDob,
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
-                ),
-              ),
-              const Text(
-                "*",
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
-                  color: Colors.red,
-                ),
-              ),
-              const SizedBox(
-                width: 55,
-              ),
-              SingleChildScrollView(
-                child: SizedBox(
-                  width: Get.width / 1.7,
-                  height: 30,
-                  child: DateTimePickerWidget(
-                    onChanged: (val) {},
-                    hintText: Constants.nomDob,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                Constants.nomRel,
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
-                ),
-              ),
-              const Text(
-                "*",
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
-                  color: Colors.red,
-                ),
-              ),
-              const SizedBox(
-                width: 65,
-              ),
-              SingleChildScrollView(
-                child: SizedBox(
-                  width: Get.width / 1.7,
-                  height: 30,
-                  child: TextFormWidget(
-                    label: Constants.nomRel,
-                    onChanged: (v) {},
-                    keyboardType: TextInputType.text,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                Constants.nomContact,
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
-                ),
-              ),
-              const SizedBox(
-                width: 35,
-              ),
-              SingleChildScrollView(
-                child: SizedBox(
-                  width: Get.width / 1.7,
-                  height: 30,
-                  child: TextFormWidget(
-                    label: Constants.nomContact,
+                    label: Constants.bankAC,
                     onChanged: (v) {},
                     keyboardType: TextInputType.number,
                   ),
@@ -249,27 +131,156 @@ class FamilyDetails extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                Constants.nomAddress,
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
+              const Row(children: [
+                Text(
+                  Constants.bankName,
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
+                  ),
+                ),
+                Text(
+                  "*",
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
+                    color: Colors.red,
+                  ),
+                )
+              ]),
+              // const SizedBox(
+              //   width: 35,
+              // ),
+              SingleChildScrollView(
+                child: SizedBox(
+                  width: Get.width / 1.7,
+                  height: 30,
+                  child: TextFormWidget(
+                    label: Constants.bankName,
+                    onChanged: (v) {},
+                  ),
                 ),
               ),
-              const SizedBox(
-                width: 30,
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Row(
+                children: [
+                  Text(
+                    Constants.ifscCode,
+                    style: TextStyle(
+                      fontSize: AppDimens.font16,
+                    ),
+                  ),
+                  Text(
+                    "*",
+                    style: TextStyle(
+                      fontSize: AppDimens.font16,
+                      color: Colors.red,
+                    ),
+                  )
+                ],
               ),
               SingleChildScrollView(
                 child: SizedBox(
                   width: Get.width / 1.7,
                   height: 30,
                   child: TextFormWidget(
-                    label: Constants.email,
+                    label: Constants.ifscCode,
                     onChanged: (v) {},
-                    keyboardType: TextInputType.text,
                   ),
                 ),
               ),
             ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Row(
+                children: [
+                  Text(
+                    Constants.branchName,
+                    style: TextStyle(
+                      fontSize: AppDimens.font16,
+                    ),
+                  ),
+                  Text(
+                    "*",
+                    style: TextStyle(
+                      fontSize: AppDimens.font16,
+                      color: Colors.red,
+                    ),
+                  )
+                ],
+              ),
+              SingleChildScrollView(
+                child: SizedBox(
+                  width: Get.width / 1.7,
+                  height: 30,
+                  child: TextFormWidget(
+                    label: Constants.branchName,
+                    onChanged: (v) {},
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                Constants.panNum,
+                style: TextStyle(
+                  fontSize: AppDimens.font16,
+                ),
+              ),
+              SingleChildScrollView(
+                child: SizedBox(
+                  width: Get.width / 1.7,
+                  height: 30,
+                  child: TextFormWidget(
+                    label: Constants.panNum,
+                    onChanged: (v) {},
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                Constants.aadharNum,
+                style: TextStyle(
+                  fontSize: AppDimens.font16,
+                ),
+              ),
+              SingleChildScrollView(
+                child: SizedBox(
+                  width: Get.width / 1.7,
+                  height: 30,
+                  child: TextFormWidget(
+                    label: Constants.aadharNum,
+                    onChanged: (v) {},
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -298,16 +309,6 @@ class FamilyDetails extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            "${Constants.nomFullForm}\n${Constants.relFullForm}\n${Constants.fH}",
-            style: TextStyle(
-              fontSize: AppDimens.font16,
-              color: Colors.red,
-            ),
           ),
         ],
       ),

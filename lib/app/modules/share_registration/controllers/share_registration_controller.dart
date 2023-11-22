@@ -26,20 +26,7 @@ class ShareRegistrationController extends GetxController
   String? inputValue = "Mr.";
   String? inputGender = "Male";
   String? inputRel = "Father";
-
-  List<String> items = ["Mr.", "Ms.", "Mrs.", "Dr."];
-
-  final List<String> gender = [
-    Constants.male,
-    Constants.female,
-    Constants.other,
-  ];
-
-  final List<String> rel = [
-    Constants.father,
-    Constants.mother,
-    Constants.other,
-  ];
+  String? inputEdu = "10th Pass";
 
   @override
   void onInit() {

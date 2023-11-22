@@ -7,9 +7,14 @@ import '../../../core/utils/app_dimens.dart';
 import '../../../widgets/app_button.dart';
 import '../../../widgets/check_form_field.dart';
 import '../../../widgets/text_form_widget.dart';
+import '../controllers/share_registration_controller.dart';
 
 class ShareAddress extends StatelessWidget {
-  const ShareAddress({super.key});
+  const ShareAddress({
+    super.key,
+    required this.controller,
+  });
+  final ShareRegistrationController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class ShareAddress extends StatelessWidget {
             Constants.permAdd,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: AppDimens.font18,
+              fontSize: AppDimens.font16,
               color: AppColors.green,
               fontWeight: FontWeight.w600,
             ),
@@ -34,26 +39,48 @@ class ShareAddress extends StatelessWidget {
             height: 20,
           ),
           CheckboxFormField(
-            title: const Text(Constants.sameAsPermAdd),
+            title: const Text(Constants.sameAsPermAdd,
+                style: TextStyle(
+                  fontSize: AppDimens.font16,
+                )),
           ),
           const Text(
             Constants.corrAdd,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: AppDimens.font18,
+              fontSize: AppDimens.font16,
               color: AppColors.green,
               fontWeight: FontWeight.w600,
             ),
           ),
           _buildAddress(),
-          Container(
-            width: 200,
-            margin: const EdgeInsets.only(top: 20),
-            alignment: Alignment.center,
-            child: AppButton(
-              title: Constants.next,
-              onPressed: () {},
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                // width: 200,
+                margin: const EdgeInsets.only(top: 20),
+                alignment: Alignment.center,
+                child: AppButton(
+                  title: Constants.back,
+                  backgroundColor: AppColors.red,
+                  onPressed: () {
+                    controller.tabController!.index -= 1;
+                  },
+                ),
+              ),
+              Container(
+                width: 200,
+                margin: const EdgeInsets.only(top: 20),
+                alignment: Alignment.center,
+                child: AppButton(
+                  title: Constants.next,
+                  onPressed: () {
+                    controller.tabController!.index += 1;
+                  },
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -67,6 +94,7 @@ class ShareAddress extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
               Constants.hNo,
@@ -74,12 +102,9 @@ class ShareAddress extends StatelessWidget {
                 fontSize: AppDimens.font16,
               ),
             ),
-            const SizedBox(
-              width: 70,
-            ),
             SingleChildScrollView(
               child: SizedBox(
-                width: Get.width / 2,
+                width: Get.width / 1.7,
                 height: 30,
                 child: TextFormWidget(
                   label: Constants.hNo,
@@ -94,6 +119,7 @@ class ShareAddress extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
               Constants.sector,
@@ -101,18 +127,14 @@ class ShareAddress extends StatelessWidget {
                 fontSize: AppDimens.font16,
               ),
             ),
-            const SizedBox(
-              width: 65,
-            ),
             SingleChildScrollView(
               child: SizedBox(
-                width: Get.width / 2,
+                width: Get.width / 1.7,
                 height: 30,
                 child: TextFormWidget(
                   label: Constants.sector,
                   onChanged: (v) {},
                   keyboardType: TextInputType.text,
-                  readOnly: true,
                 ),
               ),
             ),
@@ -122,6 +144,7 @@ class ShareAddress extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
               Constants.villColony,
@@ -129,18 +152,14 @@ class ShareAddress extends StatelessWidget {
                 fontSize: AppDimens.font16,
               ),
             ),
-            const SizedBox(
-              width: 35,
-            ),
             SingleChildScrollView(
               child: SizedBox(
-                width: Get.width / 2,
+                width: Get.width / 1.7,
                 height: 30,
                 child: TextFormWidget(
                   label: Constants.villColony,
                   onChanged: (v) {},
                   keyboardType: TextInputType.text,
-                  readOnly: true,
                 ),
               ),
             ),
@@ -150,6 +169,7 @@ class ShareAddress extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
               Constants.poCity,
@@ -157,18 +177,14 @@ class ShareAddress extends StatelessWidget {
                 fontSize: AppDimens.font16,
               ),
             ),
-            const SizedBox(
-              width: 60,
-            ),
             SingleChildScrollView(
               child: SizedBox(
-                width: Get.width / 2,
+                width: Get.width / 1.7,
                 height: 30,
                 child: TextFormWidget(
                   label: Constants.poCity,
                   onChanged: (v) {},
                   keyboardType: TextInputType.text,
-                  readOnly: true,
                 ),
               ),
             ),
@@ -178,32 +194,33 @@ class ShareAddress extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              Constants.district,
-              style: TextStyle(
-                fontSize: AppDimens.font16,
-              ),
-            ),
-            const Text(
-              "*",
-              style: TextStyle(
-                fontSize: AppDimens.font16,
-                color: Colors.red,
-              ),
-            ),
-            const SizedBox(
-              width: 55,
+            const Row(
+              children: [
+                Text(
+                  Constants.district,
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
+                  ),
+                ),
+                Text(
+                  "*",
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
+                    color: Colors.red,
+                  ),
+                )
+              ],
             ),
             SingleChildScrollView(
               child: SizedBox(
-                width: Get.width / 2,
+                width: Get.width / 1.7,
                 height: 30,
                 child: TextFormWidget(
                   label: Constants.district,
                   onChanged: (v) {},
                   keyboardType: TextInputType.text,
-                  readOnly: true,
                 ),
               ),
             ),
@@ -213,32 +230,33 @@ class ShareAddress extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              Constants.state,
-              style: TextStyle(
-                fontSize: AppDimens.font16,
-              ),
-            ),
-            const Text(
-              "*",
-              style: TextStyle(
-                fontSize: AppDimens.font16,
-                color: Colors.red,
-              ),
-            ),
-            const SizedBox(
-              width: 70,
+            const Row(
+              children: [
+                Text(
+                  Constants.state,
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
+                  ),
+                ),
+                Text(
+                  "*",
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
+                    color: Colors.red,
+                  ),
+                )
+              ],
             ),
             SingleChildScrollView(
               child: SizedBox(
-                width: Get.width / 2,
+                width: Get.width / 1.7,
                 height: 30,
                 child: TextFormWidget(
                   label: Constants.state,
                   onChanged: (v) {},
                   keyboardType: TextInputType.text,
-                  readOnly: true,
                 ),
               ),
             ),

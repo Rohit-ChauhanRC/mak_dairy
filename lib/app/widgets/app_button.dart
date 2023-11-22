@@ -9,11 +9,17 @@ class AppButton extends StatelessWidget {
     required this.title,
     this.onPressed,
     this.backgroundColor,
+    this.height,
+    this.width,
+    this.fontSize,
   });
 
   final String title;
   final void Function()? onPressed;
   final Color? backgroundColor;
+  final double? width;
+  final double? height;
+  final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +30,13 @@ class AppButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        // color: AppColors.white,
-        // minimumSize: const Size(100, 40),
-        fixedSize: const Size(120, 34),
+        fixedSize: Size(width ?? 130, height ?? 30),
       ),
       onPressed: onPressed,
       child: Text(
         title,
-        style: const TextStyle(
-          fontSize: AppDimens.font16,
+        style: TextStyle(
+          fontSize: fontSize ?? AppDimens.font18,
         ),
       ),
     );

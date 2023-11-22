@@ -64,4 +64,45 @@ class Constants {
   static const String nomAddress = "Nom. Address";
   static const String father = "Father";
   static const String mother = "Mother";
+  static const String eduQualification = "Education Qualification";
+  static const String nationality = "Nationality";
+  static const String bankAC = "Bank A/c No.";
+  static const String bankName = "Bank Name";
+  static const String ifscCode = "IFSC Code";
+  static const String branchName = "Branch Name";
+  static const String panNum = "PAN Number";
+  static const String aadharNum = "Aadhar Number";
+  static const List<String> eduList = [
+    "10th Pass",
+    "12th Pass",
+    "Below 10th Pass",
+    "Graduate",
+    "Post Graduate"
+  ];
+  static const List<String> titleList = ["Mr.", "Ms.", "Mrs.", "Dr."];
+  static const List<String> genderList = [
+    Constants.male,
+    Constants.female,
+    Constants.other,
+  ];
+
+  static const List<String> relationList = [
+    Constants.father,
+    Constants.mother,
+    Constants.other,
+  ];
+
+  static const String cancelCheck = "Cancel Check";
+  static const String photo = "Photo";
+  static const String panCard = "Pan Card";
+  static const String aadharCardFront = "Aadhar Card Front";
+  static const String aadharCardBack = "Aadhar Card Back";
+  static const String agreeTerms = "I agree terms & conditions";
+  static const String upload = "Upload";
+  static const String pay = "Pay";
+  static const String nomFullForm = "* Nom. means Nominee";
+  static const String relFullForm = "* Rel. means Relative";
+  static const String uploadDocuments = "Upload Documents";
+  static const String back = "Back";
+  static const String fH = "* F/H means Father";
 }

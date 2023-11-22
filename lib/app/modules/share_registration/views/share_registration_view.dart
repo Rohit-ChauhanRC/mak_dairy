@@ -6,7 +6,9 @@ import 'package:mak_dairy/app/widgets/app_tabar.dart';
 
 import '../../../core/constants/constants.dart';
 import '../controllers/share_registration_controller.dart';
+import '../widgets/document_details.dart';
 import '../widgets/family_details.dart';
+import '../widgets/other_details.dart';
 import '../widgets/share_address.dart';
 import '../widgets/share_details.dart';
 
@@ -58,7 +60,7 @@ class ShareRegistrationView extends GetView<ShareRegistrationController> {
             height: 10,
           ),
           SizedBox(
-              height: Get.height * 0.8,
+              height: Get.height * 0.83,
               width: Get.width,
               child: Center(
                   child: AppTabBar(
@@ -70,15 +72,17 @@ class ShareRegistrationView extends GetView<ShareRegistrationController> {
                     controller: controller,
                   ),
                   // Shipped Orders
-                  const ShareAddress(),
+                  ShareAddress(
+                    controller: controller,
+                  ),
                   FamilyDetails(
                     controller: controller,
                   ),
-                  Container(
-                    child: const Text("T4"),
+                  OtherDetails(
+                    controller: controller,
                   ),
-                  Container(
-                    child: const Text("T5"),
+                  DocumentsDetails(
+                    controller: controller,
                   ),
                 ],
               ))),

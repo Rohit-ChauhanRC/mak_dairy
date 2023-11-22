@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mak_dairy/app/core/utils/app_dimens.dart';
 
 class DropdownFormField<T> extends FormField<T> {
   DropdownFormField({
@@ -21,6 +22,7 @@ class DropdownFormField<T> extends FormField<T> {
                   filled: true,
                   contentPadding: const EdgeInsets.all(5),
                   hintText: hintDrop,
+                  hintStyle: const TextStyle(fontSize: AppDimens.font18),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: const BorderSide(
