@@ -22,8 +22,10 @@ class TextFormWidget extends StatelessWidget {
     return TextFormField(
       autovalidateMode: AutovalidateMode.always,
       onChanged: onChanged,
+      // focusNode: FocusScopeNode(canRequestFocus: true),
       inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly,
+        if (keyboardType == TextInputType.number)
+          FilteringTextInputFormatter.digitsOnly,
         // LimitRange(5),
       ],
       readOnly: readOnly,

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../core/constants/constants.dart';
 import '../../../widgets/app_bar_widget.dart';
 import '../../../widgets/app_drawer.dart';
+import '../../../widgets/copy_right.dart';
 import '../../../widgets/grid_widget.dart';
 import '../controllers/home_controller.dart';
 
@@ -13,6 +14,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: const SizedBox(height: 80, child: CopyRight()),
       appBar: AppBar(
         title: SizedBox(
           width: Get.width - 20,
@@ -58,32 +60,32 @@ class HomeView extends GetView<HomeController> {
           ),
           SizedBox(
               height: Get.height * 0.7, child: Center(child: GridWidget())),
-          Expanded(
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              color: Colors.purple[900],
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    Constants.copyright,
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    Constants.appbarTitle + Constants.allRightReserved,
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // Expanded(
+          //   child: Container(
+          //     alignment: Alignment.bottomCenter,
+          //     color: Colors.purple[900],
+          //     child: const Column(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: [
+          //         Text(
+          //           Constants.copyright,
+          //           style: TextStyle(
+          //             color: Colors.white,
+          //           ),
+          //         ),
+          //         SizedBox(
+          //           height: 10,
+          //         ),
+          //         Text(
+          //           Constants.appbarTitle + Constants.allRightReserved,
+          //           style: TextStyle(
+          //             color: Colors.white,
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

@@ -20,7 +20,9 @@ class GridWidget extends StatelessWidget {
     {
       "icon": Icons.wallet_membership,
       "title": Constants.memberCont,
-      "onTap": () {}
+      "onTap": () {
+        Get.toNamed(Routes.MEMBER_CONTRIBUTION);
+      }
     },
     {
       "icon": Icons.checklist_outlined,

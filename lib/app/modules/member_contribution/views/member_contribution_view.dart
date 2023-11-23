@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:mak_dairy/app/widgets/app_bar_widget.dart';
-import 'package:mak_dairy/app/widgets/app_tabar.dart';
 
 import '../../../core/constants/constants.dart';
+import '../../../widgets/app_tabar.dart';
 import '../../../widgets/copy_right.dart';
-import '../controllers/share_registration_controller.dart';
-import '../widgets/document_details.dart';
-import '../widgets/family_details.dart';
-import '../widgets/other_details.dart';
-import '../widgets/share_address.dart';
-import '../widgets/share_details.dart';
+import '../controllers/member_contribution_controller.dart';
+import '../widgets/member_cheque_mode.dart';
+import '../widgets/member_consent.dart';
+import '../widgets/member_documents_details.dart';
+import '../widgets/member_address.dart';
+import '../widgets/member_details.dart';
+import '../widgets/member_plan_details.dart';
 
-class ShareRegistrationView extends GetView<ShareRegistrationController> {
-  const ShareRegistrationView({Key? key}) : super(key: key);
+class MemberContributionView extends GetView<MemberContributionController> {
+  const MemberContributionView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,29 +69,29 @@ class ShareRegistrationView extends GetView<ShareRegistrationController> {
                 tabs: controller.tabs,
                 controller: controller.tabController,
                 tabChildren: [
-                  // New Orders
-                  ShareDetails(
+                  MemberDetails(
                     controller: controller,
                   ),
-                  // Shipped Orders
-                  ShareAddress(
+                  MemberAddress(
                     controller: controller,
                   ),
-                  FamilyDetails(
+                  MemberDocumentDetails(
                     controller: controller,
                   ),
-                  OtherDetails(
+                  MemberConsent(
                     controller: controller,
                   ),
-                  DocumentsDetails(
+                  MemberPlanDetails(
+                    controller: controller,
+                  ),
+                  MemberChequeMode(
                     controller: controller,
                   ),
                 ],
               ))),
-          // const Expanded(child: CopyRight())
           const Expanded(
             child: SizedBox(height: 80, child: CopyRight()),
-          ),
+          )
         ],
       ),
     );

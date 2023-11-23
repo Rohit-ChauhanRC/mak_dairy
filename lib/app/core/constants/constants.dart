@@ -105,4 +105,69 @@ class Constants {
   static const String uploadDocuments = "Upload Documents";
   static const String back = "Back";
   static const String fH = "* F/H means Father";
+  static const String gallery = "Gallery";
+  static const String camera = "Camera";
+
+  static const memDetails = "Member Details";
+  static const addDetails = "Address Details";
+  static const memConsent = "Member Consent";
+  static const String planDetails = "Plan Details";
+  static const String cheqMaster = "Cheque Master";
+  static const String shareId = "Share ID";
+  static const String refAadharNo = "Ref.  Aadhar No.";
+  static const String location = "Location";
+  static const String view = "View";
+  static const String memConsentDetails =
+      "I am hereby giving my consent to M/s Mak Life Dairy Producer company limited to use my same Kyc in the contribution application which is used at the time of Applying for membership";
+  static const String partial = "Partial";
+  static const String contributionYear = "Contribution Year";
+  static const String chequeMode = "Cheque Mode";
+  static const String contributionAmount = "Contribution Amount";
+  static const String contributionTerm = "Contribution Term";
+  static const String contrAmtPara =
+      "Contribution Amount should be multiple of ₹39600";
+  static const String ourContrMode =
+      "Our contribution mode is yearly, provision to facillate member to make contribution in Half Yearly, Quarterly and Monthly with 10% additional amount.";
+  static const String yearly = "Yearly";
+  static const String halfYearly = "Half Yearly";
+  static const String quaterly = "Half Yearly";
+  static const String monthly = "Monthly";
+  static const String chequeCopy = "Cheque Copy";
+  static const String chequeDate = "Cheque Date";
+  static const String chequeAmt = "Cheque Amount";
+  static const String chequeNo = "Cheque Number";
+  static const String submit = "Submit";
+
+  static const List<String> locationList = [
+    "Surat",
+    "Ahmedabad",
+    "Andheri",
+  ];
+  static const String refName = "Ref. name";
+  static const String refForm = "* Ref. means Referral";
+  static const String stNo = "St No.";
+  static const String memConsentPara =
+      " I am hereby giving my consent to M/s Mak Life Dairy Producer company limited to use my same Kyc in the contribution application which is used at the time of Applying for membership";
+  static const List<String> contributionYearList = [
+    "3 Year 0 Month",
+    "5 Year 0 Month",
+    "7 Year 0 Month",
+    "6 Year 0 Month",
+  ];
+  static const String unit = "Unit";
+  static const List<String> unitList = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+  ];
+  static const List<String> planList = [
+    "Yearly - ₹66000",
+    "Quaterly - ₹39000",
+    "Half yearly - ₹14000",
+    "Monthly - ₹7000",
+  ];
+
+  static const String selectPlan = "Select Plan";
 }
