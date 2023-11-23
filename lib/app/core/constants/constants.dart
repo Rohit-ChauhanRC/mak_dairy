@@ -170,4 +170,11 @@ class Constants {
   ];
 
   static const String selectPlan = "Select Plan";
+  static const String followingStaus = "Following status are under the User ID";
+  static const String shareStatus = "Share Status";
+  static const String memStatus = "Member Status";
+  static const String sNo = "S.No.";
+  static const String refCode = "Referral Code";
+  static const String status = "Status";
+  static const String search = "Search...";
 }
