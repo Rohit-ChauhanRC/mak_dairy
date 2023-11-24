@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mak_dairy/app/modules/member_contribution/controllers/member_contribution_controller.dart';
 
 import '../../../core/constants/constants.dart';
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_dimens.dart';
 import '../../../widgets/app_button.dart';
-import '../../../widgets/drop_down_widget.dart';
-import '../../../widgets/text_form_dropdown.dart';
 import '../../../widgets/text_form_widget.dart';
+import '../controllers/member_contribution_controller.dart';
 
 class MemberDocumentDetails extends StatelessWidget {
   const MemberDocumentDetails({
@@ -34,6 +32,7 @@ class MemberDocumentDetails extends StatelessWidget {
                 Constants.bankAC,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               // const SizedBox(
@@ -63,6 +62,7 @@ class MemberDocumentDetails extends StatelessWidget {
                   Constants.bankName,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -100,6 +100,7 @@ class MemberDocumentDetails extends StatelessWidget {
                     Constants.ifscCode,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -135,6 +136,7 @@ class MemberDocumentDetails extends StatelessWidget {
                     Constants.branchName,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -168,6 +170,7 @@ class MemberDocumentDetails extends StatelessWidget {
                 Constants.panNum,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(
@@ -192,6 +195,7 @@ class MemberDocumentDetails extends StatelessWidget {
                 Constants.aadharNum,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(

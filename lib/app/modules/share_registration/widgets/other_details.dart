@@ -37,6 +37,7 @@ class OtherDetails extends StatelessWidget {
                   overflow: TextOverflow.visible,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -80,6 +81,7 @@ class OtherDetails extends StatelessWidget {
                 Constants.nationality,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               // const SizedBox(
@@ -107,6 +109,7 @@ class OtherDetails extends StatelessWidget {
                 Constants.bankAC,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               // const SizedBox(
@@ -136,6 +139,7 @@ class OtherDetails extends StatelessWidget {
                   Constants.bankName,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -173,6 +177,7 @@ class OtherDetails extends StatelessWidget {
                     Constants.ifscCode,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -208,6 +213,7 @@ class OtherDetails extends StatelessWidget {
                     Constants.branchName,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -241,6 +247,7 @@ class OtherDetails extends StatelessWidget {
                 Constants.panNum,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(
@@ -265,6 +272,7 @@ class OtherDetails extends StatelessWidget {
                 Constants.aadharNum,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(

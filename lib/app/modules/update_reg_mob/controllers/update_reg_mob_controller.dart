@@ -1,12 +1,33 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
-class UpdateRegMobController extends GetxController {
-  //TODO: Implement UpdateRegMobController
+import '../../../core/constants/constants.dart';
 
-  final count = 0.obs;
+class UpdateRegMobController extends GetxController
+    with GetSingleTickerProviderStateMixin {
+  //
+  TabController? tabController;
+  int tabIndex = 0;
+  TextEditingController? textEditingController;
+
+  final RxInt _check = 0.obs;
+
+  int get check => _check.value;
+  void setcheck(int v) => _check.value = v;
+
+  List<String> tabs = [
+    Constants.share,
+    Constants.member,
+  ];
+
   @override
   void onInit() {
     super.onInit();
+    tabController = TabController(
+      length: tabs.length,
+      initialIndex: tabIndex,
+      vsync: this,
+    );
   }
 
   @override
@@ -18,6 +39,4 @@ class UpdateRegMobController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

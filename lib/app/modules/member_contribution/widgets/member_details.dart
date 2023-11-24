@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mak_dairy/app/core/utils/app_colors.dart';
-import 'package:mak_dairy/app/modules/member_contribution/controllers/member_contribution_controller.dart';
 
 import '../../../core/constants/constants.dart';
+import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_dimens.dart';
 import '../../../widgets/app_button.dart';
 import '../../../widgets/date_time_picker_widget.dart';
 import '../../../widgets/drop_down_widget.dart';
 import '../../../widgets/text_form_widget.dart';
+import '../controllers/member_contribution_controller.dart';
 
 class MemberDetails extends StatelessWidget {
   const MemberDetails({
@@ -35,6 +35,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.shareId,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -81,6 +82,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.name,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -115,6 +117,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.dob,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -149,6 +152,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.fHName,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -184,6 +188,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.motherName,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -219,6 +224,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.nomName,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -254,6 +260,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.nomDob,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -288,6 +295,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.nomRel,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -324,6 +332,7 @@ class MemberDetails extends StatelessWidget {
                   Constants.refAadharNo,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -371,6 +380,7 @@ class MemberDetails extends StatelessWidget {
                 Constants.refName,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(
@@ -401,6 +411,7 @@ class MemberDetails extends StatelessWidget {
                     Constants.location,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -457,6 +468,7 @@ class MemberDetails extends StatelessWidget {
                     Constants.mobNo,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -491,6 +503,7 @@ class MemberDetails extends StatelessWidget {
                 Constants.email,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(

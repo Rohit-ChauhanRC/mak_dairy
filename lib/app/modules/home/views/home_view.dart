@@ -30,9 +30,10 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: Colors.purple[900],
         centerTitle: true,
       ),
-      drawer: AppDrawer(
-        key: controller.drawerKey,
-      ),
+      // drawer: AppDrawer(
+      //   key: controller.drawerKey,
+      // ),
+
       body: Column(
         children: [
           const SizedBox(

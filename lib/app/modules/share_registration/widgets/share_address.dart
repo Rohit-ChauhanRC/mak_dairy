@@ -100,6 +100,7 @@ class ShareAddress extends StatelessWidget {
               Constants.hNo,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -125,6 +126,7 @@ class ShareAddress extends StatelessWidget {
               Constants.sector,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -150,6 +152,7 @@ class ShareAddress extends StatelessWidget {
               Constants.stNo,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -175,6 +178,7 @@ class ShareAddress extends StatelessWidget {
               Constants.villColony,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -200,6 +204,7 @@ class ShareAddress extends StatelessWidget {
               Constants.poCity,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -227,6 +232,7 @@ class ShareAddress extends StatelessWidget {
                   Constants.district,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -263,6 +269,7 @@ class ShareAddress extends StatelessWidget {
                   Constants.state,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(

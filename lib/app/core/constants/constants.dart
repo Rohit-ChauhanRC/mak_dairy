@@ -177,4 +177,13 @@ class Constants {
   static const String refCode = "Referral Code";
   static const String status = "Status";
   static const String search = "Search...";
+  static const String memId = "Member ID";
+  static const String action = "Action";
+  static const String share = "Share";
+  static const String member = "Member";
+  static const String download = "Download";
+  static const memDetailUnder = "Member Detail Under User";
+  static const followingStatusUnder = "Following Status Under The User ID";
+  static const String plsDeposit = "Please deposit the cheque in the name of";
+  static const String accountNumber = "Account Number";
 }

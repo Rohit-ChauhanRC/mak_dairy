@@ -1,19 +1,12 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_cropper/image_cropper.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:mak_dairy/app/core/constants/constants.dart';
-import 'package:mak_dairy/app/core/utils/app_colors.dart';
-import 'package:mak_dairy/app/core/utils/app_dimens.dart';
-import 'package:mak_dairy/app/core/utils/app_enum.dart';
-import 'package:mak_dairy/app/core/utils/utils.dart';
 
+import '../../../core/constants/constants.dart';
+import '../../../core/utils/app_colors.dart';
+import '../../../core/utils/app_dimens.dart';
+import '../../../core/utils/app_enum.dart';
 import '../../../widgets/app_button.dart';
 import '../../../widgets/check_box_widget.dart';
-import '../../../widgets/check_form_field.dart';
-import '../../../widgets/listtile_upload_img.dart';
 import '../../../widgets/upload_image_widget.dart';
 import '../controllers/share_registration_controller.dart';
 
@@ -86,12 +79,14 @@ class DocumentsDetails extends StatelessWidget {
                 Constants.shareAmount,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const Text(
                 "₹50/-",
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Container(
@@ -165,7 +160,17 @@ class DocumentsDetails extends StatelessWidget {
           //   ),
           // ),
 
-          title: Text(title),
+          title: Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: AppDimens.font14,
+            ),
+          ),
+          // titleTextStyle: const TextStyle(
+          // fontWeight: FontWeight.bold,
+          // fontSize: AppDimens.font16,
+          // ),
           // titleTextStyle: const TextStyle(
           //   fontSize: AppDimens.font14,
           // ),

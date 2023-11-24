@@ -33,6 +33,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.fHName,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(
@@ -57,6 +58,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.rel,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(
@@ -102,6 +104,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.motherName,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(
@@ -129,6 +132,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.nomName,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(
@@ -156,6 +160,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.nomDob,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const Text(
@@ -190,6 +195,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.nomRel,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const Text(
@@ -225,6 +231,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.nomContact,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(
@@ -253,6 +260,7 @@ class FamilyDetails extends StatelessWidget {
                 Constants.nomAddress,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(

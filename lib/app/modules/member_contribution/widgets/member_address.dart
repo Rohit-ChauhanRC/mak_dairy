@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mak_dairy/app/core/utils/app_colors.dart';
-import 'package:mak_dairy/app/modules/member_contribution/controllers/member_contribution_controller.dart';
 
 import '../../../core/constants/constants.dart';
+import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_dimens.dart';
 import '../../../widgets/app_button.dart';
 import '../../../widgets/check_form_field.dart';
 import '../../../widgets/text_form_widget.dart';
+import '../controllers/member_contribution_controller.dart';
 
 class MemberAddress extends StatelessWidget {
   const MemberAddress({
@@ -100,6 +100,7 @@ class MemberAddress extends StatelessWidget {
               Constants.hNo,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -125,6 +126,7 @@ class MemberAddress extends StatelessWidget {
               Constants.sector,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -150,6 +152,7 @@ class MemberAddress extends StatelessWidget {
               Constants.stNo,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -175,6 +178,7 @@ class MemberAddress extends StatelessWidget {
               Constants.villColony,
               style: TextStyle(
                 fontSize: AppDimens.font16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SingleChildScrollView(
@@ -199,6 +203,7 @@ class MemberAddress extends StatelessWidget {
             const Text(
               Constants.poCity,
               style: TextStyle(
+                fontWeight: FontWeight.bold,
                 fontSize: AppDimens.font16,
               ),
             ),
@@ -227,6 +232,7 @@ class MemberAddress extends StatelessWidget {
                   Constants.district,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -263,6 +269,7 @@ class MemberAddress extends StatelessWidget {
                   Constants.state,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(

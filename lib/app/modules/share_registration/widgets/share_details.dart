@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mak_dairy/app/core/constants/constants.dart';
-import 'package:mak_dairy/app/core/utils/app_dimens.dart';
-import 'package:mak_dairy/app/modules/share_registration/controllers/share_registration_controller.dart';
-import 'package:mak_dairy/app/widgets/date_time_picker_widget.dart';
 
+import '../../../core/constants/constants.dart';
+import '../../../core/utils/app_dimens.dart';
 import '../../../widgets/app_button.dart';
+import '../../../widgets/date_time_picker_widget.dart';
+import '../../../widgets/drop_down_widget.dart';
 import '../../../widgets/text_form_dropdown.dart';
 import '../../../widgets/text_form_widget.dart';
-import '../../../widgets/drop_down_widget.dart';
+import '../controllers/share_registration_controller.dart';
 
 class ShareDetails extends StatelessWidget {
   const ShareDetails({
@@ -36,6 +36,7 @@ class ShareDetails extends StatelessWidget {
                     Constants.name,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -73,6 +74,7 @@ class ShareDetails extends StatelessWidget {
                 Constants.gender,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(
@@ -116,6 +118,7 @@ class ShareDetails extends StatelessWidget {
                   Constants.dob,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -149,6 +152,7 @@ class ShareDetails extends StatelessWidget {
                   Constants.noShare,
                   style: TextStyle(
                     fontSize: AppDimens.font16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
@@ -182,6 +186,7 @@ class ShareDetails extends StatelessWidget {
                 Constants.shareAmount,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(
@@ -210,6 +215,7 @@ class ShareDetails extends StatelessWidget {
                     Constants.mobNo,
                     style: TextStyle(
                       fontSize: AppDimens.font16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -244,6 +250,7 @@ class ShareDetails extends StatelessWidget {
                 Constants.email,
                 style: TextStyle(
                   fontSize: AppDimens.font16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SingleChildScrollView(
