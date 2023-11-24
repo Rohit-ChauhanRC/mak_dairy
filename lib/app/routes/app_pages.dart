@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/about_us/bindings/about_us_binding.dart';
+import '../modules/about_us/views/about_us_view.dart';
 import '../modules/addition_share_purchase/bindings/addition_share_purchase_binding.dart';
 import '../modules/addition_share_purchase/views/addition_share_purchase_view.dart';
 import '../modules/bank_info_detail/bindings/bank_info_detail_binding.dart';
@@ -8,6 +10,8 @@ import '../modules/check_status/bindings/check_status_binding.dart';
 import '../modules/check_status/views/check_status_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/legal/bindings/legal_binding.dart';
+import '../modules/legal/views/legal_view.dart';
 import '../modules/member_cont_acknowledgement/bindings/member_cont_acknowledgement_binding.dart';
 import '../modules/member_cont_acknowledgement/views/member_cont_acknowledgement_view.dart';
 import '../modules/member_contribution/bindings/member_contribution_binding.dart';
@@ -99,6 +103,16 @@ class AppPages {
       name: _Paths.BANK_INFO_DETAIL,
       page: () => const BankInfoDetailView(),
       binding: BankInfoDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT_US,
+      page: () => const AboutUsView(),
+      binding: AboutUsBinding(),
+    ),
+    GetPage(
+      name: _Paths.LEGAL,
+      page: () => const LegalView(),
+      binding: LegalBinding(),
     ),
   ];
 }

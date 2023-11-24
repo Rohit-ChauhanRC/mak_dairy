@@ -16,6 +16,8 @@ abstract class Routes {
   static const MEMEBER_RECEIPT = _Paths.MEMEBER_RECEIPT;
   static const MEMEBER_LEDGER = _Paths.MEMEBER_LEDGER;
   static const BANK_INFO_DETAIL = _Paths.BANK_INFO_DETAIL;
+  static const ABOUT_US = _Paths.ABOUT_US;
+  static const LEGAL = _Paths.LEGAL;
 }
 
 abstract class _Paths {
@@ -33,4 +35,6 @@ abstract class _Paths {
   static const MEMEBER_RECEIPT = '/memeber-receipt';
   static const MEMEBER_LEDGER = '/memeber-ledger';
   static const BANK_INFO_DETAIL = '/bank-info-detail';
+  static const ABOUT_US = '/about-us';
+  static const LEGAL = '/legal';
 }

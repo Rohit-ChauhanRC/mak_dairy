@@ -30,10 +30,9 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: Colors.purple[900],
         centerTitle: true,
       ),
-      // drawer: AppDrawer(
-      //   key: controller.drawerKey,
-      // ),
-
+      drawer: AppDrawer(
+        key: controller.drawerKey,
+      ),
       body: Column(
         children: [
           const SizedBox(
@@ -47,6 +46,18 @@ class HomeView extends GetView<HomeController> {
                   color: Colors.purple[900],
                   fontWeight: FontWeight.w600,
                   fontSize: 16),
+            ),
+          ),
+          Obx(
+            () => SizedBox(
+              // height: 60,
+              child: Text(
+                controller.timeString,
+                style: TextStyle(
+                    color: Colors.purple[900],
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16),
+              ),
             ),
           ),
           const SizedBox(

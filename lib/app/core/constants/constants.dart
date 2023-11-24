@@ -186,4 +186,5 @@ class Constants {
   static const followingStatusUnder = "Following Status Under The User ID";
   static const String plsDeposit = "Please deposit the cheque in the name of";
   static const String accountNumber = "Account Number";
+  static const String welMak = "Welcome to Our Mak Life Dairy";
 }

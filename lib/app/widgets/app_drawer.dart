@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mak_dairy/app/routes/app_pages.dart';
 
 import '../core/constants/constants.dart';
 
@@ -63,6 +64,9 @@ class AppDrawer extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+            onTap: () {
+              Get.toNamed(Routes.ABOUT_US);
+            },
           ),
           ListTile(
             title: Text(
@@ -72,6 +76,9 @@ class AppDrawer extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+            onTap: () {
+              Get.toNamed(Routes.LEGAL);
+            },
           ),
           Expanded(
               child: Container(
