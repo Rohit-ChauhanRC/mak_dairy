@@ -55,6 +55,9 @@ class AppDrawer extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+            onTap: () {
+              Get.toNamed(Routes.COMPANY_INFO);
+            },
           ),
           ListTile(
             title: Text(

@@ -8,6 +8,8 @@ import '../modules/bank_info_detail/bindings/bank_info_detail_binding.dart';
 import '../modules/bank_info_detail/views/bank_info_detail_view.dart';
 import '../modules/check_status/bindings/check_status_binding.dart';
 import '../modules/check_status/views/check_status_view.dart';
+import '../modules/company_info/bindings/company_info_binding.dart';
+import '../modules/company_info/views/company_info_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/legal/bindings/legal_binding.dart';
@@ -113,6 +115,11 @@ class AppPages {
       name: _Paths.LEGAL,
       page: () => const LegalView(),
       binding: LegalBinding(),
+    ),
+    GetPage(
+      name: _Paths.COMPANY_INFO,
+      page: () => const CompanyInfoView(),
+      binding: CompanyInfoBinding(),
     ),
   ];
 }

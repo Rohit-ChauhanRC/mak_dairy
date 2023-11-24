@@ -18,6 +18,7 @@ abstract class Routes {
   static const BANK_INFO_DETAIL = _Paths.BANK_INFO_DETAIL;
   static const ABOUT_US = _Paths.ABOUT_US;
   static const LEGAL = _Paths.LEGAL;
+  static const COMPANY_INFO = _Paths.COMPANY_INFO;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const BANK_INFO_DETAIL = '/bank-info-detail';
   static const ABOUT_US = '/about-us';
   static const LEGAL = '/legal';
+  static const COMPANY_INFO = '/company-info';
 }
