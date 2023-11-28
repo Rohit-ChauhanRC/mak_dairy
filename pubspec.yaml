@@ -14,6 +14,10 @@ dependencies:
   dio: ^5.3.4
   pdf: ^3.10.6
   connectivity_plus: ^5.0.2
+  path_provider: ^2.1.1
+  flutter_pdfview: ^1.3.2
+  open_file: ^3.3.2
+  share_plus: ^7.2.1
 
   flutter:
     sdk: flutter
@@ -33,3 +37,6 @@ flutter:
     - family: Raleway
       fonts:
         - asset: assets/fonts/Raleway-Regular.ttf
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf

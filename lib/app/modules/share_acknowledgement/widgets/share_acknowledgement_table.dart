@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mak_dairy/app/core/utils/acknowledgement_pdf.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../../core/constants/constants.dart';
 import '../../../core/utils/app_colors.dart';
@@ -89,10 +91,22 @@ class ShareAcknoweldgementTable extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.all(10),
-              child: const Text(
-                Constants.status,
-                style: TextStyle(
-                  fontSize: AppDimens.font16,
+              child: InkWell(
+                onTap: () async {
+                  print("generate");
+                  await AckPdfFiles.generateAckPdf("ack_share2");
+                  print("open");
+                  await AckPdfFiles.openFile(name: "ack_share2.pdf");
+                  Share.shareFiles(
+                    [await AckPdfFiles.sharePdf(name: "ack_share2.pdf")],
+                    text: "ack_share2.pdf",
+                  );
+                },
+                child: const Text(
+                  Constants.download,
+                  style: TextStyle(
+                    fontSize: AppDimens.font16,
+                  ),
                 ),
               ),
             ),

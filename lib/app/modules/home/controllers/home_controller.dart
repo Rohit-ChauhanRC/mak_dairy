@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,4 +38,8 @@ class HomeController extends GetxController {
     _timeString.value =
         "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
   }
+
+  // void timeStream() async {
+  //   await Isolate.spawn();
+  // }
 }
