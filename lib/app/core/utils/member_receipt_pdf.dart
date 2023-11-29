@@ -11,7 +11,7 @@ import 'package:share_plus/share_plus.dart';
 
 import 'pdf_common.dart';
 
-class ComputerGeneratedReceipt {
+class MemberReceiptPdf {
   //
 
   static loadImg(XFile xFile) async {
@@ -118,95 +118,61 @@ class ComputerGeneratedReceipt {
                 tableFrom(
                   [
                     [
-                      text('Date ', ttf),
-                      text('31 JAN 2023', ttf, bold: true),
-                      text('Receipt No. ', ttf),
-                      text('R0000006', ttf, bold: true),
-                    ],
-                    [
-                      text('Contribution No.', ttf),
-                      text('MLD7000024', ttf, bold: true),
-                      text('Membership No.', ttf),
-                      text('SID7000000107', ttf, bold: true),
-                    ],
-                    [
-                      text('Contribution Instalment No.', ttf),
-                      text('2', ttf, bold: true),
-                      text('Next Due Date', ttf),
-                      text('02 March 2023', ttf, bold: true),
-                    ],
-                  ],
-                ),
-                tableFrom([
-                  [
-                    pw.RichText(
-                      overflow: pw.TextOverflow.visible,
-                      textAlign: pw.TextAlign.left,
-                      text: pw.TextSpan(
-                        style: pw.TextStyle(
-                          fontSize: AppDimens.font12,
-                          color: PdfColors.black,
-                          font: ttf,
-                        ),
-                        children: <pw.TextSpan>[
-                          const pw.TextSpan(
-                              text: 'Received with Thanks a total sum of Rs.'),
-                          pw.TextSpan(
-                              text: ' 5502.00',
-                              style: pw.TextStyle(
-                                fontWeight: pw.FontWeight.bold,
-                              )),
-                          const pw.TextSpan(text: ' Amount in Word Rs. '),
-                          pw.TextSpan(
-                              text: ' Five Thousand Five Hundred and Two ONLY',
-                              style: pw.TextStyle(
-                                fontWeight: pw.FontWeight.bold,
-                              )),
-                          const pw.TextSpan(
-                              text:
-                                  ' On Account Of "MAK LIFE DAIRY PRODUCER COMPANY LIMITED" contribution for Dairy Project'),
-                        ],
-                      ),
-                    ),
-                  ]
-                ]),
-                tableFrom(
-                  [
-                    [
-                      text('From Mr/Mrs/Ms.', ttf),
+                      text('Name of Member', ttf),
                       text('RASHMI RANA', ttf, bold: true),
-                      text('So/Do/Wo Mr/Mrs/Ms.', ttf),
-                      text('BHAJ GOVIND SINGH RANA', ttf, bold: true),
+                      text('Member Address', ttf),
+                      text(
+                          'S/O,W/O,D/O BHAJ GOVIND SINGH RANA GOVIND NIWAS 20 FT ROAD KHAIRI KHURD SATYA NARAYAN DEHRADUN UTTARAKHAND 249204',
+                          ttf,
+                          bold: true),
                     ],
-                  ],
-                ),
-                tableFrom(
-                  [
                     [
-                      pw.SizedBox(
-                        child: pw.Text(
-                          'R/o GOVIND NIWAS 20 FT ROAD VILL/COLONY KHAIRI KHURD, CITY SATYA NARAYAN, DISTT DEHRADUN, STATE UTTARAKHAND, PIN 249204',
-                          textAlign: pw.TextAlign.left,
-                          style: pw.TextStyle(
-                            fontSize: AppDimens.font12,
-                            color: PdfColors.black,
-                            font: ttf,
-                          ),
-                        ),
-                        width: 10.35 * PdfPageFormat.cm,
-                      ),
-                      text('Contact No.', ttf),
-                      text('9876543210', ttf, bold: true),
+                      text('Member ID No.', ttf),
+                      text('MLD7000024', ttf, bold: true),
+                      text('Contribution Date', ttf),
+                      text('31 Dec 2022', ttf, bold: true),
                     ],
-                  ],
-                ),
-                tableFrom(
-                  [
                     [
-                      text('Nominee Detail: Name', ttf),
+                      text('Contribution Amount', ttf),
+                      text('5500', ttf, bold: true),
+                      text('Project Term(Years)', ttf),
+                      text('3', ttf, bold: true),
+                    ],
+                    [
+                      text('Mode', ttf),
+                      text('MONTHLY', ttf, bold: true),
+                      text('Total Contribution Amount', ttf),
+                      text('180000.0', ttf, bold: true),
+                    ],
+                    [
+                      text('Nominee Name', ttf),
                       text('BHAJ GOVIND SINGH RANA', ttf, bold: true),
-                      text('Age: 16 Sep 1967', ttf),
-                      text('Relation : HUSBAND', ttf, bold: true),
+                      text('Nominee Relation', ttf),
+                      text('HUSBAND', ttf, bold: true),
+                    ],
+                    [
+                      text('Nominee DOB', ttf),
+                      text('16 Sep 1967', ttf, bold: true),
+                      text('Member DOB', ttf),
+                      text('13 Dec 1973', ttf, bold: true),
+                    ],
+                    [
+                      text('Expiry Of Term', ttf),
+                      text('30 Dec 2025', ttf, bold: true),
+                      text('Estimated Return Value', ttf),
+                      text('220000.0', ttf, bold: true),
+                    ],
+                    [
+                      text('Contribution No. ', ttf),
+                      text('1', ttf, bold: true),
+                      text('Next Due Date', ttf),
+                      text('02-Dec-2023', ttf, bold: true),
+                    ],
+                    [
+                      text('Referral Aadhar Number', ttf),
+                      text('881569269744', ttf, bold: true),
+                      text('', ttf),
+                      text('', ttf, bold: true),
                     ],
                   ],
                 ),
