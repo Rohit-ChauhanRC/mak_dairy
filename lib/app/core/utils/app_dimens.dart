@@ -1,6 +1,8 @@
 class AppDimens {
   const AppDimens._();
 
+  static const double font8 = 8;
+  static const double font10 = 10;
   static const double font12 = 12;
   static const double font14 = 14;
   static const double font16 = 16;

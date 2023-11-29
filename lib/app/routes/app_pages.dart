@@ -24,6 +24,8 @@ import '../modules/memeber_receipt/bindings/memeber_receipt_binding.dart';
 import '../modules/memeber_receipt/views/memeber_receipt_view.dart';
 import '../modules/pay_partial_installment/bindings/pay_partial_installment_binding.dart';
 import '../modules/pay_partial_installment/views/pay_partial_installment_view.dart';
+import '../modules/pdf_scrren/bindings/pdf_scrren_binding.dart';
+import '../modules/pdf_scrren/views/pdf_scrren_view.dart';
 import '../modules/share_acknowledgement/bindings/share_acknowledgement_binding.dart';
 import '../modules/share_acknowledgement/views/share_acknowledgement_view.dart';
 import '../modules/share_registration/bindings/share_registration_binding.dart';
@@ -120,6 +122,11 @@ class AppPages {
       name: _Paths.COMPANY_INFO,
       page: () => const CompanyInfoView(),
       binding: CompanyInfoBinding(),
+    ),
+    GetPage(
+      name: _Paths.PDF_SCRREN,
+      page: () => const PdfScrrenView(),
+      binding: PdfScrrenBinding(),
     ),
   ];
 }

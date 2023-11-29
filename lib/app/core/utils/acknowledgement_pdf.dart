@@ -4,12 +4,9 @@ import 'package:mak_dairy/app/core/utils/app_dimens.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:open_file/open_file.dart';
 import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart';
+import 'package:pdf/widgets.dart' as pw;
 import 'package:image_picker/image_picker.dart';
 import 'package:share_plus/share_plus.dart';
-
-import '../constants/constants.dart';
-import 'app_colors.dart';
 
 class AckPdfFiles {
   //
@@ -26,20 +23,20 @@ class AckPdfFiles {
   ) async {
     //
 
-    final pdf = Document();
+    final pdf = pw.Document();
     //final XFile xFile;
 
     final imageJpg =
         (await rootBundle.load('assets/images/logo.png')).buffer.asUint8List();
 
     pdf.addPage(
-      MultiPage(
+      pw.MultiPage(
         header: (_) {
-          return Expanded(
-            child: Container(
+          return pw.Expanded(
+            child: pw.Container(
               // width: PDfP,
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(
+              alignment: pw.Alignment.center,
+              padding: const pw.EdgeInsets.all(
                 10,
               ),
 
@@ -48,15 +45,15 @@ class AckPdfFiles {
               //color: PdfColor.fromHex("#940404"),
               color: PdfColors.white,
 
-              child: Align(
-                alignment: Alignment.center,
-                child: Container(
+              child: pw.Align(
+                alignment: pw.Alignment.center,
+                child: pw.Container(
                     height: 30,
 
                     // color: PdfColors.red,
-                    child: Text(
+                    child: pw.Text(
                       namePdf,
-                      style: TextStyle(
+                      style: pw.TextStyle(
                         fontSize: AppDimens.font20,
                         color: PdfColor.fromHex("#940404"),
 
@@ -72,24 +69,24 @@ class AckPdfFiles {
           //SizedBox(
           //  height: 0.2 * PdfPageFormat.cm,
           //),
-          Flex(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
+          pw.Flex(
+            crossAxisAlignment: pw.CrossAxisAlignment.center,
+            mainAxisAlignment: pw.MainAxisAlignment.center,
+            mainAxisSize: pw.MainAxisSize.min,
             children: [
               ...imageFileList.map(
-                (e) => Container(
+                (e) => pw.Container(
                   height: 400,
                   width: 400,
-                  alignment: Alignment.center,
-                  margin: const EdgeInsets.all(30),
-                  child: Image(
-                    MemoryImage(File(e.path).readAsBytesSync()),
+                  alignment: pw.Alignment.center,
+                  margin: const pw.EdgeInsets.all(30),
+                  child: pw.Image(
+                    pw.MemoryImage(File(e.path).readAsBytesSync()),
                   ),
                 ),
               ),
             ],
-            direction: Axis.vertical,
+            direction: pw.Axis.vertical,
           ),
           //SizedBox(
           //  height: 0.2 * PdfPageFormat.cm,
@@ -116,7 +113,7 @@ class AckPdfFiles {
 
   static Future<File> saveDocument({
     required String name,
-    required Document pdf,
+    required pw.Document pdf,
   }) async {
     //
     final bytes = await pdf.save();
@@ -141,7 +138,7 @@ class AckPdfFiles {
   ) async {
     //
 
-    final pdf = Document();
+    final pdf = pw.Document();
     //final XFile xFile;
 
     final imageJpg = (await rootBundle.load('assets/images/watermark.png'))
@@ -149,42 +146,50 @@ class AckPdfFiles {
         .asUint8List();
 
     final font = await rootBundle.load("assets/fonts/OpenSans-Regular.ttf");
-    final ttf = Font.ttf(font);
+    final ttf = pw.Font.ttf(font);
+
+    // final abc = pw.Image();
 
     pdf.addPage(
-      MultiPage(
-        pageTheme: PageTheme(
-          theme: ThemeData.withFont(
+      pw.MultiPage(
+        pageTheme: pw.PageTheme(
+          theme: pw.ThemeData.withFont(
             base: ttf,
           ),
-          // orientation: PageOrientation.portrait,
-          // margin: const EdgeInsets.all(10),
+          pageFormat: const PdfPageFormat(
+            800,
+            400,
+            marginAll: 20,
+          ),
           clip: true,
-          // textDirection: TextDirection.ltr,
-          // pageFormat: const PdfPageFormat(300, 800),
-          buildBackground: (Context context) => FullPage(
+          buildBackground: (pw.Context context) => pw.FullPage(
             ignoreMargins: true,
-            child: Watermark(
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: Image(
-                      MemoryImage(
+            child: pw.Container(
+              child: pw.Opacity(
+                opacity: 0.5,
+                child: pw.Container(
+                    alignment: pw.Alignment.center,
+                    height: 280,
+                    width: 280,
+                    // color: PdfColor(1, 0, 0),
+                    child: pw.Image(
+                      pw.MemoryImage(
                         imageJpg,
-                        dpi: 50,
+                        dpi: 100,
                       ),
-                    ).image,
-                  ),
-                ),
+                      fit: pw.BoxFit.scaleDown,
+                      height: 280,
+                      width: 280,
+                    )),
               ),
             ),
           ),
         ),
         header: (_) {
-          return Container(
+          return pw.Container(
             // width: PDfP,
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(
+            alignment: pw.Alignment.center,
+            padding: const pw.EdgeInsets.all(
               10,
             ),
 
@@ -193,19 +198,20 @@ class AckPdfFiles {
             //color: PdfColor.fromHex("#940404"),
             color: PdfColors.white,
 
-            child: Align(
-              alignment: Alignment.center,
-              child: Container(
+            child: pw.Align(
+              alignment: pw.Alignment.center,
+              child: pw.Container(
                   height: 30,
 
                   // color: PdfColors.red,
-                  child: Text(
+                  child: pw.Text(
                     "CONTRIBUTION ACKNOWLEDGEMENT",
-                    style: TextStyle(
+                    style: pw.TextStyle(
                       fontSize: AppDimens.font20,
                       color: PdfColors.black,
+                      fontWeight: pw.FontWeight.bold,
                       font: ttf,
-                      decoration: TextDecoration.underline,
+                      decoration: pw.TextDecoration.underline,
                       //color: PdfColors.white,
                     ),
                   )),
@@ -239,125 +245,128 @@ class AckPdfFiles {
         },
         build: (_) => [
           //Divider(),
-          Container(
-            // decoration: BoxDecoration(
-            //   image: DecorationImage(
-            //     dpi: 50,
-            //     alignment: Alignment.center,
-            //     image: .image,
-            //   ),
-            // ),
-            //SizedBox(
-            child: Flex(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
+          pw.Container(
+            child: pw.Flex(
+              crossAxisAlignment: pw.CrossAxisAlignment.center,
+              mainAxisAlignment: pw.MainAxisAlignment.center,
+              mainAxisSize: pw.MainAxisSize.min,
               children: [
-                SizedBox(
+                pw.SizedBox(
                   height: 20,
                 ),
-                RichText(
-                  overflow: TextOverflow.visible,
-                  textAlign: TextAlign.left,
-                  text: TextSpan(
-                    style: TextStyle(
+                pw.RichText(
+                  overflow: pw.TextOverflow.visible,
+                  textAlign: pw.TextAlign.left,
+                  text: pw.TextSpan(
+                    style: pw.TextStyle(
                       fontSize: AppDimens.font16,
                       color: PdfColors.black,
                       font: ttf,
                     ),
-                    children: <TextSpan>[
-                      const TextSpan(
+                    children: <pw.TextSpan>[
+                      const pw.TextSpan(
                           text:
                               'MRS. Rashmi Rana, Thank you for applying for Contribution. We have received your payment on dated '),
-                      TextSpan(
+                      pw.TextSpan(
                           text: ' 31 Dec 2022',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          style: pw.TextStyle(
+                            fontWeight: pw.FontWeight.bold,
                           )),
-                      const TextSpan(
+                      const pw.TextSpan(
                         text: '   against',
                       ),
-                      TextSpan(
+                      pw.TextSpan(
                           text: ' 501',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          style: pw.TextStyle(
+                            fontWeight: pw.FontWeight.bold,
                           )),
-                      const TextSpan(
+                      const pw.TextSpan(
                         text: '   Project for',
                       ),
-                      TextSpan(
+                      pw.TextSpan(
                           text: '  3 Years',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          style: pw.TextStyle(
+                            fontWeight: pw.FontWeight.bold,
                           )),
-                      const TextSpan(
+                      const pw.TextSpan(
                         text:
                             '  Your receipt will be generated shortly subject to the Approval of concerned Department. Your Provisional Receipt No.',
                       ),
-                      TextSpan(
+                      pw.TextSpan(
                           text: ' F0000038.',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          style: pw.TextStyle(
+                            fontWeight: pw.FontWeight.bold,
                             font: ttf,
                           )),
                     ],
                   ),
                 ),
-                SizedBox(
+                pw.SizedBox(
                   height: 20,
                 ),
-                RichText(
-                  overflow: TextOverflow.visible,
-                  textAlign: TextAlign.left,
-                  text: TextSpan(
-                    style: TextStyle(
+                pw.Align(
+                  alignment: pw.Alignment.centerLeft,
+                  child: pw.Text(
+                    'Note: ',
+                    textAlign: pw.TextAlign.left,
+                    style: pw.TextStyle(
                       fontSize: AppDimens.font14,
                       color: PdfColors.black,
                       font: ttf,
                     ),
-                    children: const <TextSpan>[
-                      TextSpan(text: 'Note: '),
-                      TextSpan(
-                          text:
-                              '\n*This is computer generated acknowledgement no signature required.',
-                          style: TextStyle()),
-                      TextSpan(
-                        text: '\n*All the Terms and Conditions applied.',
-                      ),
-                    ],
                   ),
                 ),
-                SizedBox(
+                pw.Bullet(
+                  text:
+                      'This is computer generated acknowledgement no signature required.',
+                  style: pw.TextStyle(
+                    fontSize: AppDimens.font14,
+                    color: PdfColors.black,
+                    font: ttf,
+                  ),
+                ),
+                pw.Bullet(
+                  text: 'All the Terms and Conditions applied.',
+                  style: pw.TextStyle(
+                    fontSize: AppDimens.font14,
+                    color: PdfColors.black,
+                    font: ttf,
+                  ),
+                ),
+                pw.SizedBox(
                   height: 20,
                 ),
-                RichText(
-                  overflow: TextOverflow.visible,
-                  textAlign: TextAlign.left,
-                  text: TextSpan(
-                    style: TextStyle(
+                pw.Align(
+                  alignment: pw.Alignment.centerLeft,
+                  child: pw.Text(
+                    'Generated Date & Time : 24 Nov 2023 02:35:26',
+                    textAlign: pw.TextAlign.left,
+                    style: pw.TextStyle(
                       fontSize: AppDimens.font12,
                       color: PdfColors.black,
                       font: ttf,
                     ),
-                    children: const <TextSpan>[
-                      TextSpan(
-                          text: 'Generated Date & Time : 24 Nov 2023 02:35:26'),
-                      TextSpan(
-                          text:
-                              '\n\n*This document is electronically generated, no signature is required.',
-                          style: TextStyle()),
-                    ],
                   ),
                 ),
-                SizedBox(
+                pw.SizedBox(
                   height: 20,
                 ),
+                pw.Align(
+                  alignment: pw.Alignment.centerLeft,
+                  child: pw.Text(
+                    'This document is electronically generated, no signature is required.',
+                    textAlign: pw.TextAlign.left,
+                    style: pw.TextStyle(
+                      fontSize: AppDimens.font12,
+                      color: PdfColors.black,
+                      font: ttf,
+                    ),
+                  ),
+                ),
               ],
-              direction: Axis.vertical,
+              direction: pw.Axis.vertical,
             ),
           ),
-          //  height: 0.2 * PdfPageFormat.cm,
-          //),
         ],
       ),
     );

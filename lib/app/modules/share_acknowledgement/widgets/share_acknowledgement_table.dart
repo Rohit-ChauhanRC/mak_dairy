@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mak_dairy/app/core/utils/acknowledgement_pdf.dart';
+import 'package:mak_dairy/app/core/utils/computer_generated_receipt.dart';
+import 'package:mak_dairy/app/routes/app_pages.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../core/constants/constants.dart';
@@ -94,13 +97,19 @@ class ShareAcknoweldgementTable extends StatelessWidget {
               child: InkWell(
                 onTap: () async {
                   print("generate");
-                  await AckPdfFiles.generateAckPdf("ack_share2");
+                  await ComputerGeneratedReceipt.generateReceiptPdf(
+                      "ack_share2");
                   print("open");
-                  await AckPdfFiles.openFile(name: "ack_share2.pdf");
-                  Share.shareFiles(
-                    [await AckPdfFiles.sharePdf(name: "ack_share2.pdf")],
-                    text: "ack_share2.pdf",
-                  );
+                  await ComputerGeneratedReceipt.openFile(
+                      name: "ack_share2.pdf");
+                  // Share.shareFiles(
+                  //   [await AckPdfFiles.sharePdf(name: "ack_share2.pdf")],
+                  //   text: "ack_share2.pdf",
+                  // );
+
+                  Get.toNamed(Routes.PDF_SCRREN,
+                      arguments:
+                          await AckPdfFiles.sharePdf(name: "ack_share2.pdf"));
                 },
                 child: const Text(
                   Constants.download,

@@ -19,6 +19,7 @@ abstract class Routes {
   static const ABOUT_US = _Paths.ABOUT_US;
   static const LEGAL = _Paths.LEGAL;
   static const COMPANY_INFO = _Paths.COMPANY_INFO;
+  static const PDF_SCRREN = _Paths.PDF_SCRREN;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const ABOUT_US = '/about-us';
   static const LEGAL = '/legal';
   static const COMPANY_INFO = '/company-info';
+  static const PDF_SCRREN = '/pdf-scrren';
 }
